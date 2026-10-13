@@ -1,0 +1,13 @@
+{
+  "name": "kubiki-menu",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Кубики меню — PWA. Зависимости нужны только для тестов и генерации иконок; само приложение их не использует.",
+  "scripts": {
+    "test:unit": "node tests/aggregate.test.js",
+    "test:e2e": "node tests/e2e.mjs",
+    "icons": "node tools/make-icons.mjs",
+    "test": "npm run test:unit && npm run test:e2e"
+  },
+  "devDependencies": { "playwright": "^1.50.0" }
+}
