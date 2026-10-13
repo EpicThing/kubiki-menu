@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Кубики меню</title>
+<meta name="description" content="Случайное меню на неделю, расписание готовки и список покупок. Работает офлайн.">
+<meta name="theme-color" content="#f4f1ea" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#161917" media="(prefers-color-scheme: dark)">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" type="image/png" sizes="192x192" href="icons/icon-192.png">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Кубики">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top">
+  <h1>Кубики меню</h1>
+  <button class="icon-btn" id="themeBtn" aria-label="Переключить тему" title="Тема"></button>
+</header>
+
+<main class="wrap">
+  <section id="menu" class="view" aria-label="Меню и готовка"></section>
+  <section id="shop" class="view shop" aria-label="Покупки" hidden></section>
+  <section id="set" class="view" aria-label="Настройки" hidden></section>
+</main>
+
+<nav class="tabs" role="tablist" aria-label="Разделы">
+  <button role="tab" data-tab="menu" id="tab-menu">Меню</button>
+  <button role="tab" data-tab="shop" id="tab-shop">Покупки <span class="badge" id="shopBadge" hidden></span></button>
+  <button role="tab" data-tab="set" id="tab-set">Настройки</button>
+</nav>
+
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+<dialog id="dlg" class="dlg">
+  <form method="dialog">
+    <p id="dlgMsg" class="note"></p>
+    <textarea id="dlgText" readonly aria-label="Текст для копирования"></textarea>
+    <div class="bar"><button class="btn" value="close">Закрыть</button></div>
+  </form>
+</dialog>
+<input type="file" id="importFile" accept="application/json,.json" hidden>
+
+<noscript>Для работы приложения нужен JavaScript.</noscript>
+<script src="data.js"></script>
+<script src="logic.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
